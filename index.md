@@ -703,6 +703,60 @@ The Management API (v2) is a RESTful API that enables programmatic control over 
 
 ---
 
+## **8. Auth0 CLI**
+
+The Auth0 CLI lets you manage tenant resources from your terminal for quick, interactive tasks. Use the Deploy CLI when you need configuration as code.
+
+### **8.1 Install and login**
+- macOS  
+    brew tap auth0/auth0-cli && brew install auth0
+- Windows  
+    scoop bucket add auth0 https://github.com/auth0/scoop-auth0-cli.git  
+    scoop install auth0
+- Linux  
+    curl -sSfL https://raw.githubusercontent.com/auth0/auth0-cli/main/install.sh | sh -s -- -b .
+- Authenticate  
+    auth0 login
+
+### **8.2 Everyday commands**
+- Help  
+    auth0 help
+- Tenants  
+    auth0 tenants list  
+    auth0 tenants use <name>
+- Applications  
+    auth0 apps list | create | update <id>
+- APIs (resource servers)  
+    auth0 apis list | create
+- Users  
+    auth0 users list  
+    auth0 users show <id>
+- Actions  
+    auth0 actions list  
+    auth0 actions deploy <id>
+- Raw Management API call  
+    auth0 api <method> <url-path> --data '<json>' --scopes <scopes>
+
+### **8.3 Deploy CLI, when you need config as code**
+- Install  
+    npm i -g auth0-deploy-cli
+- Export tenant config  
+    a0deploy export -c config.json -o directory
+- Import to tenant  
+    a0deploy import -c config.json -i directory
+- Configure with a `config.json` or environment variables. Ideal for CI/CD and keeping DEV, SIT, UAT, and PROD in sync.
+
+### **8.4 Exam cues**
+- “Quick task from terminal” → Auth0 CLI.  
+- “Repeatable environment sync, config as code, CI/CD” → Deploy CLI.  
+- Both tools call the Management API under the hood.
+
+**References:**  
+- Auth0 CLI repo and docs: https://github.com/auth0/auth0-cli  
+- Deploy CLI docs: https://auth0.com/docs/deploy-monitor/deploy-cli-tool
+
+---
+
 ## **Part II: Practical Application and Hands-On Task Preparation**
 
 This section provides practical, step-by-step guides for the hands-on use cases that are assessed in Part II of the Okta Certified Developer \- Auth0 exam. Each guide is designed to be a concise lab, walking through the necessary configurations in the Auth0 Dashboard and explaining the core concepts involved.
