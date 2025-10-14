@@ -1,13 +1,46 @@
 
-# **Auth0 Certified Developer Exam: A Deep Dive into Core Concepts and Low-Level Details**
+## **Introduction**
 
-## **Introduction: A Strategic Approach to the Auth0 Developer Exam**
+Preparing for the Auth0 Certified Developer Exam requires more than a surface understanding of identity and access management. It involves developing a clear grasp of how the platform behaves in practice, including its APIs, configuration options, supported protocols, and security mechanisms.  
 
-Preparing for the Auth0 Certified Developer Exam requires more than a surface understanding of identity and access management. It involves developing a clear grasp of how the platform behaves in practice, including its APIs, configuration options, supported protocols, and security mechanisms.
+This guide was created during my own preparation for the exam, with the goal of bringing together key details from the documentation, training materials, and hands-on experience into a single structured resource. It focuses on the areas that are often overlooked but frequently tested, such as exact parameter names, default settings, limitations, and the subtle differences between related features.  
 
-This guide was created during my own preparation for the exam, with the goal of bringing together key details from the documentation, training materials, and hands-on experience into a single structured resource. It focuses on the areas that are often overlooked but frequently tested, such as exact parameter names, default settings, limitations, and the subtle differences between related features.
+The intention is not to replace the official learning materials but to complement them. It provides a concise, technically focused reference designed to support effective revision and build confidence when approaching the more detailed and scenario-based questions in the exam.  
 
-The intention is not to replace the official learning materials but to complement them. It provides a concise, technically focused reference designed to support effective revision and build confidence when approaching the more detailed and scenario-based questions in the exam.
+---
+
+## **Before You Start**
+
+Success in the Auth0 Certified Developer Exam depends on preparation and familiarity with how the platform behaves in real-world use. Below are some practical tips and study advice based on my own experience preparing for the exam.
+
+### **1. Start with the Related Learning**
+Complete all of the **Related Learning** modules listed in the official [Auth0 Certified Developer Study Guide](https://certification.okta.com/page/developer-auth0-exam-study-guide), including the codelabs.  
+Take notes on any topics that appear in the short tests at the end of each section, as many of these concepts reappear in the real exam.  
+For the codelabs, **register a new Auth0 tenant for each lab** to keep your environment clean and avoid configuration conflicts.
+
+### **2. Go Beyond the Study Guide**
+Do not expect to pass the exam by completing the study guide alone.  
+The real exam goes into fine detail, much of which is not covered in the related learning. Read the official documentation to fill in gaps, but do not feel you need to memorise everything. Focus on taking clear notes on areas where your understanding feels weaker.
+
+### **3. Practice Exams**
+- **Standard Practice Exam:** Take the standard exam and review every question you get wrong. Research the topics you struggled with, then retake the test until you understand all 20 questions thoroughly. The real exam is double that length, so aim for full mastery here.  
+- **Premium Practice Exam:** If your budget allows, this is worth every penny. It includes the same number of questions as the real exam and many of the topics will appear again. The practical exercises are especially valuable, as they walk you through setting up applications and using the Management API, both of which are essential for the real exam. You can retake the Premium exam up to seven times, so use it to refine your weak areas and build confidence.  
+
+The **practical section** of the exam is worth roughly **half the total score**, and if you follow the instructions carefully you can get close to full marks. So do not panic if you have to make a few educated guesses on the DOMC questions — a strong performance in the practical can easily balance things out.
+
+### **4. DOMC Question Tips**
+The exam uses **DOMC (Discrete Option Multiple Choice)** questions. Each option appears one at a time, and you must decide immediately whether it is correct.  
+Here are some key tips:
+- Do not rush. Think carefully about how each option relates to the question.  
+- If you do not see a clear and specific connection to the question, it is safest to assume the option is incorrect.  
+- Treat each option independently, as more than one answer may be correct.  
+- If an option feels vaguely familiar, pause and think about **why**. Try to recall the exact context in which you’ve seen it before. The exam often tests small but important distinctions between similar concepts, so make sure your answer fits the question precisely rather than relying on general recognition.  
+- Read the question stem closely before you start answering; subtle wording often changes what counts as correct.
+
+### **5. Exam Day**
+Allow around **40 minutes** to get set up with the proctoring company. Make sure you understand the requirements for ID verification, desk space, and allowed materials before your scheduled time.  
+Use **wired peripherals** (mouse, keyboard, speakers) if possible. If you use wireless devices, you will need to show the USB dongle to the proctor, which can be awkward if it is connected tot he bottom of a monitor or anywhere else not easily accessible.  
+Ensure your workspace is clear, your internet connection is stable, and you have your ID ready.  
 
 ---
 
