@@ -47,7 +47,7 @@ Here are some key tips:
 - Read the question stem closely before you start answering; subtle wording often changes what counts as correct.
 
 ### **5. Exam Day**
-Allow around **40 minutes** to get set up with the proctoring company. Make sure you understand the requirements for ID verification, desk space, and allowed materials before your scheduled time.  
+Allow around **40 minutes** to get set up with the proctoring company. This will start at the time you have scheduled your exam, so factor that in when planning how long the exam will take in total. Make sure you understand the requirements for ID verification, desk space, and allowed materials before your scheduled time.  
 Use **wired peripherals** (mouse, keyboard, speakers) if possible. If you use wireless devices, you will need to show the USB dongle to the proctor, which can be awkward if it is connected tot he bottom of a monitor or anywhere else not easily accessible.  
 Ensure your workspace is clear, your internet connection is stable, and you have your ID ready.  
 
@@ -964,7 +964,7 @@ Follow the codelab here:
 - [Flexible Identifiers and Attributes](https://auth0.com/docs/authenticate/database-connections/flexible-identifiers-and-attributes)
 
 ### Organizations and Multi-tenant
-- [Add members to an organization | Management API v2](https://auth0.com/docs/api/management/v2/organizations/post-members)
+- [Add members to an organization with Management API v2](https://auth0.com/docs/api/management/v2/organizations/post-members)
 - [Assign Members to an Organization](https://auth0.com/docs/manage-users/organizations/configure-organizations/assign-members)
 - [Auth0 Organizations](https://auth0.com/docs/manage-users/organizations)
 - [Invite Organization Members](https://auth0.com/docs/manage-users/organizations/configure-organizations/invite-members)
