@@ -1,3 +1,12 @@
+---
+title: Auth0 Certified Developer Study Guide
+author: Adam Cerny
+description: Study notes and preparation tips for the Auth0 Certified Developer Exam (Okta Developer Certification)
+---
+
+# Auth0 Certified Developer Study Guide
+
+_Author: Adam Cerny_
 
 ## **Introduction**
 
