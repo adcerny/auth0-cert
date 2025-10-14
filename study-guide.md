@@ -3,9 +3,11 @@
 
 ## **Introduction: A Strategic Approach to the Auth0 Developer Exam**
 
-Success on the Auth0 Certified Developer Exam requires more than a high-level understanding of identity concepts; it demands a granular command of the platform's specific configurations, API behaviors, protocol implementations, and security features. This report is engineered to bridge the gap between standard training modules and the low-level, detail-oriented questions frequently encountered in certification testing.
+Preparing for the Auth0 Certified Developer Exam requires more than a surface understanding of identity and access management. It involves developing a clear grasp of how the platform behaves in practice, including its APIs, configuration options, supported protocols, and security mechanisms.
 
-The methodology of this guide involves a systematic deconstruction of the official reference materials specified in the exam study guide. The objective is to extract critical, memorization-focused data points and present them within a structured, logical framework. This document will serve as a definitive technical resource, focusing on precise syntax, default values, limitations, and the nuanced interactions between different components of the Auth0 platform. The content is organized to align with the exam's domains, providing an exhaustive review of the knowledge required to demonstrate expert-level proficiency.
+This guide was created during my own preparation for the exam, with the goal of bringing together key details from the documentation, training materials, and hands-on experience into a single structured resource. It focuses on the areas that are often overlooked but frequently tested, such as exact parameter names, default settings, limitations, and the subtle differences between related features.
+
+The intention is not to replace the official learning materials but to complement them. It provides a concise, technically focused reference designed to support effective revision and build confidence when approaching the more detailed and scenario-based questions in the exam.
 
 ---
 
@@ -36,7 +38,7 @@ This distinction has a critical and direct impact on token security. The Client 
 
 To prevent this, public clients **must** use an asymmetric signing algorithm, **RS256**. In this model, Auth0 signs the token with a private key that is kept secret on Auth0's servers. The public client then verifies the token's signature using a corresponding public key, which it retrieves from a publicly accessible JWKS (JSON Web Key Set) endpoint provided by the Auth0 tenant at `https://{yourDomain}/.well-known/jwks.json`. Because the client only needs the public key for verification, it has no secret to protect. Confidential clients, with their ability to protect a secret, are permitted to use either HS256 (symmetric) or the recommended RS256 (asymmetric) algorithm.
 
-The following table consolidates these critical relationships for memorization.
+The following table consolidates these critical relationships for memorisation.
 
 | Application Type | Client Type | Can Store Secret? | Recommended Flow |
 | :---- | :---- | :---- | :---- |
@@ -56,7 +58,7 @@ The "Application URIs" section in the application settings is a critical securit
 * **Allowed Logout URLs:** A comma-separated list of URLs to which a user can be redirected after logging out, used in conjunction with the returnTo query parameter. This field has a limit of **100 URLs**. Importantly, query strings and hash fragments in the provided URL are ignored during the validation process.  
 * **Allowed Web Origins:** A comma-separated list of URLs that are permitted to make requests using Cross-Origin Authentication. This field also has a limit of **100 URLs**, and validation similarly ignores paths, query strings, and hash fragments.
 
-For multi-tenant B2B applications that use the Auth0 Organizations feature, a more secure and dynamic method for handling customer-specific subdomains is available. Instead of using a risky wildcard, the `{organization\_name}` placeholder can be used in the Allowed Callback URLs, for instance: `https://{organization\_name}.myapp.com/callback`.
+For multi-tenant B2B applications that use the Auth0 Organisations feature, a more secure and dynamic method for handling customer-specific subdomains is available. Instead of using a risky wildcard, the `{organization\_name}` placeholder can be used in the Allowed Callback URLs, for instance: `https://{organization\_name}.myapp.com/callback`.
 
 Using a wildcard like \*.myapp.com creates a vulnerability because an attacker could potentially register a subdomain (e.g., malicious.myapp.com), initiate a login flow, and trick Auth0 into redirecting an authenticated user—along with their sensitive authorization code—to the attacker-controlled server. The {organization\_name} placeholder mitigates this threat. Auth0 will only substitute the names of organizations that are legitimately registered and configured within the tenant. An attacker cannot forge a redirect to an arbitrary subdomain; it must correspond to a known and trusted entity within the Auth0 configuration.
 
@@ -307,12 +309,12 @@ This domain covers the lifecycle of a user account within Auth0, from creation a
 
 #### **3.1 User Profiles: Metadata and Linking**
 
-Auth0 provides a flexible system for storing user data, centered around a normalized user profile and two types of metadata.
+Auth0 provides a flexible system for storing user data, centered around a normalised user profile and two types of metadata.
 
 * **user\_metadata vs. app\_metadata:** This distinction is a fundamental concept for data storage and access control.  
   * **user\_metadata:** This is a JSON object for storing non-critical user attributes and preferences that the user themselves can typically view and edit, such as a preferred language or profile settings. This data should not impact what the user can or cannot access.  
   * **app\_metadata:** This is a JSON object for storing information that should not be modifiable by the user. It is intended for data that influences authorization, such as assigned roles, subscription levels, or permissions. This data is typically managed by administrators or through automated processes.  
-* **Normalized User Profile:** Auth0 ingests user profiles from various sources (e.g., social providers like Google, enterprise directories via SAML, or its own database) and maps them to a consistent, normalized schema. This provides the application with a predictable structure for user data, regardless of how the user authenticated.  
+* **Normalized User Profile:** Auth0 ingests user profiles from various sources (e.g., social providers like Google, enterprise directories via SAML, or its own database) and maps them to a consistent, normalised schema. This provides the application with a predictable structure for user data, regardless of how the user authenticated.  
 * **Account Linking:** This feature allows multiple identities that belong to the same physical person (e.g., a user who signed up with a username/password and later logged in with Google) to be linked together under a single primary user profile. This provides a unified view of the user and prevents duplicate accounts. Linking can be performed programmatically via the Management API or by using the Account Link extension.
 
 #### **3.2 Role-Based Access Control (RBAC)**
@@ -332,11 +334,11 @@ Auth0 Organizations is a feature set designed specifically for B2B and SaaS appl
 - **Enable connections per organisation:** after creating an Organisation, go to the Organisation settings and enable the required connections. Users will not be able to authenticate until the connection is enabled for that organisation.
 
   * Organizations are only compatible with the **New Universal Login** experience; Classic Login is not supported.  
-  * It does not support providing a unique custom domain for each organization. If customer-a.com and customer-b.com are required as login domains, separate Auth0 tenants are necessary.  
+  * It does not support providing a unique custom domain for each organisation. If customer-a.com and customer-b.com are required as login domains, separate Auth0 tenants are necessary.  
   * The feature is incompatible with certain flows, including the Resource Owner Password Grant (ROPG), Device Authorization Flow, and WS-Federation.  
 * **Member Management:**  
-  * **Invitation Flow:** To add a user who may not yet have an account, an administrator can send an invitation. The user receives an email with a unique link containing an invitation ticket ID and an organization ID. The application's login route must be configured to parse these query parameters and pass them to Auth0 during the authentication flow to correctly associate the new user with the organization.  
-  * **Direct Assignment:** For users who already exist in the Auth0 tenant, they can be added to an organization directly via the Management API. This is done by making a POST request to the `/api/v2/organizations/{id}/members` endpoint. The request body must contain a JSON object with a members key, whose value is an array of user ID strings (e.g., `{"members": \["auth0|user1", "google-oauth2|user2"\]}`). A maximum of **10 members** can be added in a single API call.  
+  * **Invitation Flow:** To add a user who may not yet have an account, an administrator can send an invitation. The user receives an email with a unique link containing an invitation ticket ID and an organisation ID. The application's login route must be configured to parse these query parameters and pass them to Auth0 during the authentication flow to correctly associate the new user with the organization.  
+  * **Direct Assignment:** For users who already exist in the Auth0 tenant, they can be added to an organisation directly via the Management API. This is done by making a POST request to the `/api/v2/organizations/{id}/members` endpoint. The request body must contain a JSON object with a members key, whose value is an array of user ID strings (e.g., `{"members": \["auth0|user1", "google-oauth2|user2"\]}`). A maximum of **10 members** can be added in a single API call.  
 * **Tokens and Organizations:** When a user authenticates through an organization-specific login flow, the resulting ID and access tokens will include an org\_id claim containing the unique identifier of that organization. If enabled in the tenant settings, an org\_name claim can also be included. Both the client application (consuming the ID token) and the API (consuming the access token) should validate this claim to ensure that actions are being performed within the correct tenant context.
 
 #### **3.4 Progressive Profiling and Profile Enrichment**
