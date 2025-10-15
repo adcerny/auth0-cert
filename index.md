@@ -1057,7 +1057,7 @@ Follow the codelab here:
 - [Prevent Common Cybersecurity Threats](https://auth0.com/docs/secure/security-guidance/prevent-threats)
 - [Suspicious IP Throttling](https://auth0.com/docs/secure/attack-protection/suspicious-ip-throttling)
 - [View Attack Protection Log Events](https://auth0.com/docs/secure/attack-protection/view-attack-protection-events)
-- [auth0_attack_protection | Terraform Registry](https://registry.terraform.io/providers/auth0/auth0/latest/docs/resources/attack_protection)
+- [auth0_attack_protection Terraform Registry](https://registry.terraform.io/providers/auth0/auth0/latest/docs/resources/attack_protection)
 
 ### Monitoring and Logs
 - [How to Monitor Bot Protection Usage — Community](https://community.auth0.com/t/how-to-monitor-bot-protection-usage/174821)
@@ -1066,7 +1066,7 @@ Follow the codelab here:
 ### APIs and Management API
 - [Auth0 APIs](https://auth0.com/docs/api)
 - [Create Machine-to-Machine Applications for Testing](https://auth0.com/docs/get-started/apis/create-m2m-app-test)
-- [Introduction | Auth0 Management API v2](https://auth0.com/docs/api/management/v2)
+- [Introduction to Auth0 Management API v2](https://auth0.com/docs/api/management/v2)
 
 ### Tutorials and Overviews
 - [Token Based Authentication Made Easy](https://auth0.com/learn/token-based-authentication-made-easy)
