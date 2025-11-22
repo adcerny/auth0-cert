@@ -1,0 +1,122 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@import "{{ site.theme }}";
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #f8f8f2;
+    background-color: #282a36;
+  }
+
+  .page-header {
+    background-color: #282a36;
+    background-image: linear-gradient(120deg, #42013f, #011177);
+    border-bottom: 1px solid #6272a4;
+  }
+
+  .project-name,
+  .project-tagline,
+  .site-footer-owner,
+  .site-footer-credits {
+    color: #f8f8f2;
+  }
+
+  .main-content {
+    color: #ab96df;
+    background-color: transparent;
+  }
+
+  .main-content h1,
+  .main-content h2,
+  .main-content h3,
+  .main-content h4,
+  .main-content h5,
+  .main-content h6 {
+    color: #f8f8f2;
+  }
+
+  .main-content p,
+  .main-content li,
+  .main-content dl,
+  .main-content blockquote {
+    color: #f8f8f2;
+  }
+
+  .main-content blockquote {
+    border-left: 0.3em solid #6272a4;
+    background-color: rgba(68, 71, 90, 0.4);
+  }
+
+  .main-content pre,
+  .main-content code,
+  .highlight pre,
+  .highlight code {
+    background-color: #44475a;
+    color: #f8f8f2;
+    border-color: #6272a4;
+  }
+
+  .main-content pre code,
+  .main-content code {
+    color: inherit;
+  }
+
+  .main-content table {
+    border-color: #6272a4;
+  }
+
+  .main-content table th {
+    background-color: rgba(68, 71, 90, 0.8);
+    color: #f8f8f2;
+  }
+
+  .main-content table td {
+    background-color: rgba(40, 42, 54, 0.7);
+    color: #f8f8f2;
+  }
+
+  .main-content table tr + tr td,
+  .main-content table tr + tr th {
+    border-top: 1px solid #6272a4;
+  }
+
+  hr {
+    background-color: #6272a4;
+  }
+
+  a,
+  .main-content a {
+    color: #8be9fd;
+  }
+
+  a:hover,
+  .main-content a:hover {
+    color: #ff79c6;
+  }
+
+  strong,
+  b {
+    color: #f1fa8c;
+  }
+
+  .btn,
+  .page-header .btn,
+  .project-tagline .btn {
+    background-color: #bd93f9;
+    color: #282a36;
+    border-color: transparent;
+  }
+
+  .btn:hover,
+  .page-header .btn:hover,
+  .project-tagline .btn:hover {
+    background-color: #ff79c6;
+    color: #282a36;
+  }
+
+  .site-footer {
+    border-top: 1px solid #6272a4;
+    background-color: #282a36;
+  }
+}
